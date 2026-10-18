@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laptop Sticker Planner</title>
+  <meta name="description" content="Try out sticker layouts on your laptop lid before you peel anything.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='6' width='26' height='19' rx='3' fill='%231f5c4d'/%3E%3Ccircle cx='12' cy='14' r='4' fill='%23ffc93c'/%3E%3Crect x='17' y='15' width='7' height='6' rx='1.5' transform='rotate(-12 20 18)' fill='%23eef1f4'/%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Icon set (each <symbol> is used with <svg><use href="#i-name"></svg>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M12 8.2l1.2 2.4 2.6.4-1.9 1.8.5 2.6L12 14.2l-2.4 1.2.5-2.6-1.9-1.8 2.6-.4z"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2l1.5-2h6l1.5 2h2A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+      <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2.5 19h19"/><circle cx="12" cy="10.5" r="1.6"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-rotate-cw" viewBox="0 0 24 24"><path d="M19 12a7 7 0 1 1-2.05-4.95"/><path d="M19.5 4.5v4h-4"/></symbol>
+      <symbol id="i-rotate-ccw" viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 2.05-4.95"/><path d="M4.5 4.5v4h4"/></symbol>
+      <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 7L5 11l4 4"/><path d="M5 11h9a5 5 0 0 1 0 10h-2"/></symbol>
+      <symbol id="i-redo" viewBox="0 0 24 24"><path d="M15 7l4 4-4 4"/><path d="M19 11h-9a5 5 0 0 0 0 10h2"/></symbol>
+      <symbol id="i-wand" viewBox="0 0 24 24"><path d="M4 20L14 10"/><path d="M15.5 3.5v3M17 5h-3M19.5 9v2M20.5 10h-2M10 4v2M11 5H9"/><path d="M14 10l1.5-1.5"/></symbol>
+      <symbol id="i-eraser" viewBox="0 0 24 24"><path d="M8.5 19.5L3.8 14.8a1.5 1.5 0 0 1 0-2.1l8.9-8.9a1.5 1.5 0 0 1 2.1 0l5.4 5.4a1.5 1.5 0 0 1 0 2.1l-8.1 8.2z"/><path d="M8 9.5l6.5 6.5M8.5 19.5H20"/></symbol>
+      <symbol id="i-brush" viewBox="0 0 24 24"><path d="M14.5 4.5l5 5-7.5 7.5-5-5z"/><path d="M7 12l-1.5 1.5c-1.5 1.5-1 3-2.5 5.5 2.5-1.5 4-1 5.5-2.5L10 15"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V5h5v2M6.5 7l1 12.5h9l1-12.5M10.5 11v5M13.5 11v5"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="1.5"/><path d="M15.5 8.5V6A1.5 1.5 0 0 0 14 4.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></symbol>
+      <symbol id="i-forward" viewBox="0 0 24 24"><path d="M12 3.5l8 4.5-8 4.5L4 8z"/><path d="M4.5 12.5l7.5 4.2 7.5-4.2" opacity=".45"/><path d="M4.5 16.5l7.5 4.2 7.5-4.2" opacity=".45"/></symbol>
+      <symbol id="i-backward" viewBox="0 0 24 24"><path d="M12 11.5l8 4.5-8 4.5L4 16z"/><path d="M4.5 7.5L12 3.3l7.5 4.2" opacity=".45"/><path d="M4.5 11.5L12 7.3l7.5 4.2" opacity=".45"/></symbol>
+      <symbol id="i-more" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="18" cy="12" r="1.3" fill="currentColor"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="1.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8 8"/></symbol>
+      <symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/></symbol>
+      <symbol id="i-ruler" viewBox="0 0 24 24"><rect x="2.5" y="8" width="19" height="8" rx="1.2"/><path d="M6.5 8v3M10.5 8v4.5M14.5 8v3M18.5 8v4.5"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Sticker Planner</span>
+    </div>
+
+    <div class="layouts" role="group" aria-label="Layouts">
+      <label class="visually-hidden" for="layoutSelect">Current layout</label>
+      <select id="layoutSelect" class="layouts__select"></select>
+      <button class="btn btn--small" id="btnNewLayout" type="button">New layout</button>
+      <button class="icon-btn" id="btnLayoutMenu" type="button" aria-label="More layout options" aria-haspopup="menu" aria-expanded="false">
+        <svg class="icon" aria-hidden="true"><use href="#i-more"/></svg>
+      </button>
+    </div>
+
+    <div class="topbar__end">
+      <button class="btn btn--small" id="btnLaptop" type="button"><svg class="icon" aria-hidden="true"><use href="#i-laptop"/></svg>Laptop</button>
+      <button class="btn btn--small" id="btnExport" type="button"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg>Save image</button>
+      <button class="icon-btn" id="btnAppMenu" type="button" aria-label="More options" aria-haspopup="menu" aria-expanded="false">
+        <svg class="icon" aria-hidden="true"><use href="#i-more"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="banner" id="storageBanner" hidden>
+    This browser won’t let the page save anything, so your stickers disappear when you close it.
+    Open it through Live Server in Cursor (see README) or in Chrome or Edge.
+  </div>
+
+  <main class="workspace">
+    <aside class="library" aria-labelledby="libraryTitle">
+      <div class="library__head">
+        <h1 class="library__title" id="libraryTitle">My stickers <span class="library__count" id="libraryCount"></span></h1>
+        <button class="btn btn--primary btn--block" id="btnScan" type="button">
+          <svg class="icon" aria-hidden="true"><use href="#i-scan"/></svg>Scan stickers
+        </button>
+      </div>
+      <div class="library__sheet" id="librarySheet">
+        <ul class="tiles" id="tiles"></ul>
+        <div class="library__empty" id="libraryEmpty" hidden>
+          <p class="library__empty-title">Your sticker sheet is empty</p>
+          <p class="library__empty-text">Photograph the stickers you own to cut them out, or start with a few samples to try the layout tools.</p>
+          <button class="btn btn--small" id="btnSamples" type="button">Add sample stickers</button>
+        </div>
+      </div>
+      <p class="library__hint">Click a sticker to put it on the lid, or drag it to a spot.</p>
+    </aside>
+
+    <section class="stage" aria-label="Laptop lid">
+      <div class="stage__bar">
+        <div class="stage__group">
+          <button class="icon-btn" id="btnUndo" type="button" aria-label="Undo" title="Undo (Ctrl+Z)"><svg class="icon" aria-hidden="true"><use href="#i-undo"/></svg></button>
+          <button class="icon-btn" id="btnRedo" type="button" aria-label="Redo" title="Redo (Ctrl+Shift+Z)"><svg class="icon" aria-hidden="true"><use href="#i-redo"/></svg></button>
+        </div>
+        <p class="stage__stats" id="stats" aria-live="polite"></p>
+        <div class="stage__group stage__group--end">
+          <label class="toggle" title="When on, stickers stay at the size you measured">
+            <input type="checkbox" id="optLock"><span class="toggle__track" aria-hidden="true"></span>Real size only
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="optShadows"><span class="toggle__track" aria-hidden="true"></span>Shadows
+          </label>
+          <label class="toggle" title="Hide handles and the parts hanging off the edge (P)">
+            <input type="checkbox" id="optPreview"><span class="toggle__track" aria-hidden="true"></span>Preview
+          </label>
+          <span class="stage__divider" aria-hidden="true"></span>
+          <button class="icon-btn" id="btnZoomOut" type="button" aria-label="Zoom out"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+          <button class="zoom-readout" id="btnZoomFit" type="button" title="Fit the lid to the window">100%</button>
+          <button class="icon-btn" id="btnZoomIn" type="button" aria-label="Zoom in"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+        </div>
+      </div>
+      <div class="stage__mat" id="matHost">
+        <canvas id="mat" aria-label="Laptop lid with stickers. Select a sticker, then use the arrow keys to move it and R to rotate it." tabindex="0"></canvas>
+        <div class="selection" id="selectionBar" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <!-- Scripts: plain files, no build step. Order matters. -->
+  <script src="js/imaging.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/samples.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/scanner.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
