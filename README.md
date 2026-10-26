@@ -131,3 +131,7 @@ Positions on the lid are stored in millimetres, so a sticker you measured at 5 c
 - Showing two layouts side by side.
 - Automatic corner detection for the paper in the straighten step.
 - Glossy or holographic finishes when drawing stickers.
+
+## License
+
+Released under the [MIT License](LICENSE).
